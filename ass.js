@@ -30,18 +30,9 @@
 //   [30, 31, 32, 33, 34]
 // ])) 
 
-function swapHeadAndTail(arr) {
-  const mid = Math.floor(arr.length / 2);
-  const array = [];
-
-  if (arr.length % 2) {
-    array.push(...arr.splice(mid + 1));
-    array.push(mid + 1)
-    array.push(...arr.splice(0, mid));
-    return array;
+function findFirstSingleChar(str) {
+  for (let i = 0; i < str.length; i += 1) {
+    if (str.indexOf(str.charAt(i)) === str.lastIndexOf(str.charAt(i))) return str.charAt(i);
   }
-  array.push(...arr.splice(mid));
-  return [...array, ...arr];
 }
-
-console.log(swapHeadAndTail([1, 2, 3, 4, 5, 6]))
+console.log(findFirstSingleChar('entefnte'))
